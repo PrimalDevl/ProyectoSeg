@@ -1,0 +1,11 @@
+USE todo;
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente A', 'A');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente B', 'B');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente C', 'C');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente D', 'D');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente E', 'E');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente F', 'F');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente G', 'G');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente H', 'H');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente I', 'I');
+INSERT INTO clientes (nombre, comentario) VALUES ('Cliente J', 'J');

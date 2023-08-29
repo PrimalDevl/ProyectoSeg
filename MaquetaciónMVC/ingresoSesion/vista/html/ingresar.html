@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<head>
+	<title> Ingresar </title>
+	<link rel="stylesheet" href="vista/css/ingresar.css"></link>
+
+</head>
+<body>
+	<div id="posicion">
+		<div id="fondoIngresar">
+			<div class="contenedor" id="imagenDiv">
+				<img src="vista/imagenes/perfilUsuario.png" alt="Img">
+			</div>
+			<div class="contenedor" id="formDiv">
+
+				<form action="controladores/php/validacionIngreso.php" method="GET">
+					<input id="cedula" type="text" name="nombre" placeholder="Usuario" value="55554216"></input>
+					<input id="contrasenya" type="text" name="contrasenya" placeholder="Contraseña" value="Mundo"></input>
+					<button type="button" name="button">enviar</button>
+				</form>
+			</div>
+	  </div>
+		<div id="estado"><!--Estado de ingreso se muestra aca--></div>
+	</div>
+
+
+<script src="controladores/javascript/ingresar.js" charset="utf-8"></script>
+</body>
+</html>
