@@ -10,7 +10,6 @@
   				$datosJson[] = array(
           'cedula' => $fila['cedula'],
   				'nombre' => $fila['nombre'],
-          'apellido' => $fila['apellido'],
           'comentario' => $fila['comentario'],
   				);
   		}

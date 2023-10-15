@@ -1,13 +1,14 @@
 <?php
-  require_once 'baseDeDatos/conexion.php';
-  if (isset($_POST['cedula'])) {
-    $declaracion = $conexion->prepare("INSERT INTO clientes (cedula, nombre, apellido, comentario) VALUES (?, ?, ?, ?)");
+  $confirmado = isset($_POST['nombre']) && isset($_POST['comentario']);
 
-    $cedula = $_POST['cedula'];
+  if ($confirmado) {
+
+    $declaracion = $conexion->prepare("INSERT INTO clientes (nombre, comentario) VALUES (?, ?)");
+
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $apellido = $_POST['comentario'];
-    $declaracion->bind_param("isss", $cedula, $nombre, $apellido, $comentario);
+    $comentario = $_POST['comentario'];
+    $declaracion->bind_param("ss", $nombre, $comentario);
+
     $declaracion->execute();
   }
 ?>
