@@ -1,12 +1,14 @@
 <?php
-if (isset($_POST['cedula'])) {
-  $cedula = $_POST['cedula'];
-  $nombre = $_POST['nombre'];
-  $apellido = $_POST['apellido'];
-  $apellido = $_POST['comentario'];
+  $confirmado = isset($_POST['identificador']);
 
-  $consulta = "UPDATE clientes SET nombre = '{$nombre}', apellido = '{$apellido}' WHERE cedula = {$cedula};";
-  $resultado = mysqli_query($conexion, $consulta);
-  $consulta = "DELETE FROM clientes WHERE cedula = {$cedula};";
-}
+  if ($confirmado) {
+    $identificador = $_POST['identificador'];
+    $nombre = $_POST['nombre'];
+    $comentario = $_POST['comentario'];
+
+    $consulta = "UPDATE clientes SET nombre = '{$nombre}', comentario = '{$comentario}' WHERE identificador = '{$identificador};";
+    $resultado = mysqli_query($conexion, $consulta);
+
+    $consulta = "DELETE FROM clientes WHERE identificador = {$identificador};"
+  }
 ?>

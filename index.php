@@ -1,1 +1,3 @@
-<?php require_once 'vista/html/index.html'; ?>
+<?php
+  require_once 'vista/vistaClientes.php';
+?>
