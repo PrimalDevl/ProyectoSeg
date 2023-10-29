@@ -11,7 +11,8 @@ INSERT INTO clientes (cedula, nombre, comentario) VALUES
 (12345090, 'Carlos',   'Comentario; no pude, wwwwwww'),
 (12345100, 'Rafael',   'Comentario; no pude, wwwwwww');
 
-insert into Empleados(ci, nombre, apellido, direccion, telefono) values
+
+insert into usuarios (cedula, nombre, apellido, direccion, telefono) VALUES
 (12345110, 'Alberto', 'Rodriguez', 'Pedro 1992', 094547321),
 (12345120, 'Jhonatan', 'Marino', 'Villa Farre 4242', 095847524),
 (12345130, 'Amanda', 'Silva', 'Monte rey 2321', 096454452),
@@ -22,6 +23,7 @@ insert into Empleados(ci, nombre, apellido, direccion, telefono) values
 (12345180, 'Celeste', 'Vazquez', 'Mendoza 9384', 093547417),
 (12345190, 'Camila', 'Suarez', 'La Costa 7485', 097415589),
 (12345100, 'Rojelio', 'Di Fortuna', 'Pasaje Diagonal 2485', 094746358);
+
 
 
 
