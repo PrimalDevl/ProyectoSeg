@@ -20,5 +20,8 @@
 <script src="controladores/sesiones/inicioSesion.js" charset="utf-8"></script>
 <script src="controladores/validacion/validacionCampos.js" charset="utf-8"></script>
 <script src="controladores/validacion/controlFormato.js" charset="utf-8"></script>
+<script src="controladores/sesiones/esAdmin.js" charset="utf-8"></script>
+<script src="controladores/sesiones/inicioAdmin.js" charset="utf-8"></script>
+<script src="controladores/sesiones/inicioUsuario.js" charset="utf-8"></script>
 </body>
 </html>

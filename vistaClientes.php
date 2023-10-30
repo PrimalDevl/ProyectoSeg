@@ -10,9 +10,9 @@
       <div onclick="actualizarVista('clientes')" class="pestañaBarraNavegadora">
         Clientes
       </div>
-      <div onclick="actualizarVista('usuarios')" class="pestañaBarraNavegadora">
-        Empleados
-      </div>
+      <?php
+        echo $_REQUEST['esAdmin'];
+      ?>
       <div class="pestañaBarraNavegadora">
         3
       </div>

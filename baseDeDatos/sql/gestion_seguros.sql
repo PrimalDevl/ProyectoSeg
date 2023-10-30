@@ -8,10 +8,16 @@ CREATE TABLE clientes (
 	PRIMARY KEY (cedula)
 );
 CREATE TABLE usuarios (
-	cedula INT(7) AUTO_INCREMENT,
+	cedula INT(8) AUTO_INCREMENT,
 	nombre VARCHAR(255),
 	apellido VARCHAR(255),
 	direccion VARCHAR(255),
 	telefono TEXT(9),
+	esAdmin BOOLEAN,
+	PRIMARY KEY (cedula)
+);
+CREATE TABLE bajas_logicas (
+	cedula INT(8),
+	datos TEXT(2047),
 	PRIMARY KEY (cedula)
 );

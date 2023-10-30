@@ -5,7 +5,8 @@ function validarCampos() {
 
   entradaValida = validarDatos(cedula, contraseña);
   if (entradaValida) {
+    let identificacion = cedula
     let intentoEntrada = `cedula=${cedula}&contrasena=${contraseña}&submit=ingresar`
-    iniciarSesion(intentoEntrada);
+    esAdmin(intentoEntrada, identificacion);
   }
 }
