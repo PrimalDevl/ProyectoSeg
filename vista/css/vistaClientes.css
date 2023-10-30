@@ -1,0 +1,105 @@
+body {
+  background-color: rgb(207, 211, 243);
+  margin: 0px;
+}
+h1, h2, p {
+  margin: 5px
+}
+dialog {
+  position: absolute;
+
+}
+.contenido {
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+.barra {
+  background-color: rgb(108, 179, 249);
+}
+.listaClientes {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.vistaLista {
+  text-align: center;
+  align-items: center;
+  margin: 0px;
+  width: 100%;
+}
+.botonLista {
+  position: fixed;
+  right: 5%;
+}
+.pestañaBarraNavegadora {
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 5px solid black;
+  height: 95%;
+  width: 20%;
+}
+#barraNavegadora {
+  background-color: rgb(108, 179, 249);
+  height: 10vh;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+#bordeInferiorBarraNavegadora {
+  margin-bottom: 0px;
+  background-color: black;
+  height: 5%;
+}
+/*soportaPNGs rgb(193, 221, 251)*/
+#cuerpoPrincipal {
+  display: flex;
+}
+#fondoVistaDetallada {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 0rem 2em;
+  width: 70vw;
+  height: 85vh;
+  background-color: rgb(116, 124, 196);
+}
+#vistaDetallada {
+
+  margin-bottom: 0px;
+  height: 82%
+
+  /*<!--rgb(66, 110, 154) -->bottom background overlay*/
+}
+#contenedorLista {
+    width: 30vw;
+}
+#barraHerramientas {
+  background-color: rgb(108, 179, 249);
+  height: 20%
+}
+#contenedorLista {
+  display: block;
+  height: 90vh;
+  overflow-y: scroll;
+}
+#datosCliente {
+  display: table;
+  overflow-y: scroll;
+  width: 100%;
+}
+.esconder {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+}
+#Cancelar {
+  margin-right: 20px
+}
+#Continuar {
+  margin-left: 20px;
+}

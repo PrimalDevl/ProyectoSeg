@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vista/css/sesion.css">
+    <title> Inicio de sesion </title>
+</head>
+<body>
+  <div class="Tabla">
+    <img src="vista/graficos/perfilUsuario.png" class="Logo" alt="gráfico de perfil">
+    <form method="post" action="verificacion.php">
+      <input required id="usuario" type="number" min="10000000" max="99999999" class="Cedula" name="usuario" placeholder="Ingrese su cedula sin guión"></input>
+      <input required id="contrasena" type="text" class="Contraseña" name="contra" placeholder="Ingrese su contraseña"></input>
+      <button class="Ingresar" type="submit" name="submit" value="ingresar">Ingresar</button>
+    </form>
+  </div>
+
+<script src="controladores\javascipt\sesiones\ingresar.js" charset="utf-8"></script>
+<script src="controladores\javascipt\validacion\validacionCampos.js" charset="utf-8"></script>
+</body>
+</html>
