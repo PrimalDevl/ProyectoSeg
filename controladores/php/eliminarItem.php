@@ -1,10 +1,10 @@
 <?php
-  require_once '../../baseDeDatos/conexion.php';
+require_once '../../baseDeDatos/conexion.php';
+$cedula = $_COOKIE['cedula'];
+$categoria = $_REQUEST['categoria'];
 
-  $identificador = $_COOKIE['cedula'];
+$declaracion = $conexion->prepare("DELETE FROM {$categoria} WHERE cedula = ?");
+$declaracion->bind_param("s", $cedula);
 
-  $declaracion = $conexion->prepare("DELETE FROM clientes WHERE identificador = ?");
-  $declaracion->bind_param("i", $identificador);
-
-  $declaracion->execute();
+$declaracion->execute();
 ?>

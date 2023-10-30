@@ -1,8 +1,9 @@
 <?php
 require_once '../../../baseDeDatos/conexion.php';
 
+$categoria = $_REQUEST['categoria'];
 $cedula = $_COOKIE['cedula'];
-$resultado = $conexion->query("SELECT * FROM clientes WHERE cedula = {$cedula};");
+$resultado = $conexion->query("SELECT * FROM {$categoria} WHERE cedula = {$cedula};");
 
 if ($resultado) {
   $cliente = mysqli_fetch_assoc($resultado);
@@ -10,7 +11,6 @@ if ($resultado) {
   $datosCliente[] = array(
     'cedula' => $cliente['cedula'],
     'nombre' => $cliente['nombre'],
-    'comentario' => $cliente['comentario'],
   );
   echo json_encode($datosCliente);
 }

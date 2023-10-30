@@ -1,10 +1,15 @@
-function actualizarVista() {
+function actualizarVista(categoria) {
   const solicitudXmlHttp = new XMLHttpRequest();
-  var mostradorClientes = document.getElementById("datosCliente");
-  solicitudXmlHttp.open(
-    'GET',
-    'controladores/php/traerListaClientes.php'
-  );
+  let mostradorClientes = document.getElementById("datosCliente");
+  let memoriaCategoria = document.getElementById("memoriaCategoria");
+  memoriaCategoria.innerHTML = `${categoria}`
+  console.log(memoriaCategoria);
+  if (categoria != null) {
+    solicitudXmlHttp.open(
+      'GET',
+      `controladores/php/traerListaClientes.php?categoria=${categoria}`
+    );
+  }
   solicitudXmlHttp.send();
   solicitudXmlHttp.onload = function () {
     let respuesta = this.responseText;
@@ -16,7 +21,7 @@ function actualizarVista() {
         codigoHTML += `
         <tr class="listaClientes">
         <td class="contenido vistaLista">
-        <p> ${fila.nombre} ${fila.cedula} ${fila.comentario} </p>
+        <p>${fila.nombre} ${fila.cedula}</p>
         <button onclick="seleccionarItem()" id="${fila.cedula}">Seleccionar</button>
         </td>
         </tr>`;
@@ -40,4 +45,4 @@ function actualizarVista() {
 
   }
 
-window.onload = actualizarVista();
+window.onload = actualizarVista("clientes");

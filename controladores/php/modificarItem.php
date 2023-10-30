@@ -1,14 +1,20 @@
 <?php
-  $confirmado = isset($_POST['identificador']);
+require_once '../../baseDeDatos/conexion.php';
 
-  if ($confirmado) {
-    $identificador = $_POST['identificador'];
-    $nombre = $_POST['nombre'];
-    $comentario = $_POST['comentario'];
+$cedula = $_POST['cedula'];
+$nombre = $_POST['nombre'];
+$categoria = $_POST['categoria'];
 
-    $consulta = "UPDATE clientes SET nombre = '{$nombre}', comentario = '{$comentario}' WHERE identificador = '{$identificador};";
-    $resultado = mysqli_query($conexion, $consulta);
+$declaracion ="UPDATE {$categoria} SET nombre='{$nombre}' WHERE cedula={$cedula};";
+echo $declaracion;
+$resultado = mysqli_query($conexion, $declaracion);
 
-    $consulta = "DELETE FROM clientes WHERE identificador = {$identificador};"
-  }
+$declaracion = "DELETE FROM {$categoria} WHERE cedula = {$cedula}";
+echo $consulta;
+$resultado = mysqli_query($conexion, $declaracion);
+
+echo "
+<script type='text/javascript'>
+  window.location = '../../vistaClientes.php';
+</script>";
 ?>

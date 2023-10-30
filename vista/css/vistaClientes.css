@@ -18,7 +18,7 @@ dialog {
 }
 .listaClientes {
   padding: 0px;
-  margin: 0px
+  margin: 0px;
   width: 100%;
 }
 .vistaLista {
@@ -88,7 +88,7 @@ dialog {
   overflow-y: scroll;
   width: 100%;
 }
-#blur {
+.esconder {
   display: none;
   background-color: rgba(0, 0, 0, 0.2);
   position: absolute;

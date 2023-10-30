@@ -1,14 +1,17 @@
 <?php
-  $confirmado = isset($_POST['nombre']) && isset($_POST['comentario']);
+require_once '../../baseDeDatos/conexion.php';
 
-  if ($confirmado) {
+$categoria = $_REQUEST['categoria'];
+$declaracion = $conexion->prepare("INSERT INTO {$categoria} (cedula, nombre) VALUES (?, ?)");
 
-    $declaracion = $conexion->prepare("INSERT INTO clientes (nombre, comentario) VALUES (?, ?)");
+$cedula = $_POST['cedula'];
+$nombre = $_POST['nombre'];
+$declaracion->bind_param("ss", $cedula, $nombre);
+$declaracion->execute();
 
-    $nombre = $_POST['nombre'];
-    $comentario = $_POST['comentario'];
-    $declaracion->bind_param("ss", $nombre, $comentario);
-
-    $declaracion->execute();
-  }
+echo "
+<script type='text/javascript'>
+  window.location = '../../vistaClientes.php';
+  </script>";
+  exit();
 ?>

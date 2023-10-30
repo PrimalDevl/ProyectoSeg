@@ -1,0 +1,44 @@
+body, html, head {
+    background-color: rgb(116, 124, 196);
+    padding: 0px;
+    margin: 0px;
+
+}
+.Logo {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.Tabla {
+    height: 80vh;
+    width: 60vw;
+    margin: auto;
+    background-color: whitesmoke;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    position: absolute;
+    border-bottom: 5px solid #404680;
+    border-right: 5px solid #404680;
+}
+.Cedula, .Contraseña, .Ingresar {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    top: 50%;
+    height: 30px;
+    margin-top: 0.3em;
+}
+#monitorDeEstado {
+  position: absolute;
+  top: 0%;
+  z-index: 1;
+  background-color: #eea;
+  width: 100%;
+  text-align: center;
+}

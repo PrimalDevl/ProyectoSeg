@@ -10,6 +10,8 @@ CREATE TABLE clientes (
 CREATE TABLE usuarios (
 	cedula INT(7) AUTO_INCREMENT,
 	nombre VARCHAR(255),
-	comentario TEXT(2047),
+	apellido VARCHAR(255),
+	direccion VARCHAR(255),
+	telefono TEXT(9),
 	PRIMARY KEY (cedula)
 );

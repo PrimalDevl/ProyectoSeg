@@ -11,7 +11,6 @@ INSERT INTO clientes (cedula, nombre, comentario) VALUES
 (12345090, 'Carlos',   'Comentario; no pude, wwwwwww'),
 (12345100, 'Rafael',   'Comentario; no pude, wwwwwww');
 
-
 insert into usuarios (cedula, nombre, apellido, direccion, telefono) VALUES
 (12345110, 'Alberto', 'Rodriguez', 'Pedro 1992', 094547321),
 (12345120, 'Jhonatan', 'Marino', 'Villa Farre 4242', 095847524),
@@ -23,18 +22,3 @@ insert into usuarios (cedula, nombre, apellido, direccion, telefono) VALUES
 (12345180, 'Celeste', 'Vazquez', 'Mendoza 9384', 093547417),
 (12345190, 'Camila', 'Suarez', 'La Costa 7485', 097415589),
 (12345100, 'Rojelio', 'Di Fortuna', 'Pasaje Diagonal 2485', 094746358);
-
-
-
-
-insert  into Seguros(fecha_inicio, fecha_vencimiento, descripcion) values
-("02-10-23", "02-11-23", "seguro de mascotas"),
-("03-10-23", "03-11-23", "seguro auto"),
-("04-10-23", "04-11-23", "seguro casa"),
-("05-10-23", "05-11-23", "seguro vida"),
-("06-10-23", "06-11-23", "seguro perdidas"),
-("07-10-23", "07-11-23", "seguro transportes"),
-("08-10-23", "08-11-23", "seguro salud"),
-("09-10-23", "09-11-23", "dseguro accidentes"),
-("10-10-23", "10-11-23", "seguro dependencia"),
-("11-10-23", "11-11-23", "seguro credito");
