@@ -11,7 +11,10 @@
         Clientes
       </div>
       <?php
-        echo $_REQUEST['esAdmin'];
+        $json = json_encode($_REQUEST);
+        $autoridad = json_decode($json);
+        $esAdmin = $autoridad->request;
+        echo $esAdmin;
       ?>
       <div class="pestañaBarraNavegadora">
         3

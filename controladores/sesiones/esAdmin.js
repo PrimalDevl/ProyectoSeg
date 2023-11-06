@@ -1,5 +1,5 @@
 function esAdmin(credenciales, usuario) {
-  let esAdministrador = 0;
+  let mensaje = "";
   const solicitudXmlHttp = new XMLHttpRequest();
   solicitudXmlHttp.open(
     'POST',
@@ -13,19 +13,16 @@ function esAdmin(credenciales, usuario) {
     "Content-Type",
     "application/x-www-form-urlencoded"
   );
-  let mensaje = `cedula=${esAdmin}`;
-  solicitudXmlHttp.send(mensaje);
+  solicitud = `cedula=${usuario}`
+  solicitudXmlHttp.send(solicitud);
   solicitudXmlHttp.onreadystatechange = function () {
     if (solicitudXmlHttp.readyState === 4) {
-      esAdmin = `
-      <div onclick="actualizarVista('usuarios')" class="pestañaBarraNavegadora">
-      Empleados
-      </div>
-      `;
-      console.log(solicitudXmlHttp.status);
-      esAdmin = solicitudXmlHttp.responseText;
-      console.log(esAdmin);
+      let datosUsuario = solicitudXmlHttp.responseText;
+      let usuario = JSON.parse(datosUsuario);
+      console.log(usuario[0]);
+      let esAdmin = usuario[0].esAdmin;
       iniciarSesion(credenciales, esAdmin);
     };
   }
 }
+  // let mensaje = `cedula=<div onclick="actualizarVista('usuarios')" class="pestañaBarraNavegadora">Empleados</div>`;
