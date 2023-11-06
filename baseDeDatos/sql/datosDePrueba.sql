@@ -21,4 +21,5 @@ insert into usuarios (cedula, nombre, apellido, direccion, telefono, esAdmin) VA
 (12345170, 'Sebastian', 'Machado', 'San Luis 2942', 096254741, 0),
 (12345180, 'Celeste', 'Vazquez', 'Mendoza 9384', 093547417, 0),
 (12345190, 'Camila', 'Suarez', 'La Costa 7485', 097415589, 0),
+(55554216, 'Fran', 'Chagas', 'San Martin 1234', 097654321, 1),
 (12345100, 'Rojelio', 'Di Fortuna', 'Pasaje Diagonal 2485', 094746358, 1);
