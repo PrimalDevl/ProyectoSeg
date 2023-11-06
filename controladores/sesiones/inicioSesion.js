@@ -1,4 +1,5 @@
-function iniciarSesion(credenciales) {
+function iniciarSesion(credenciales, esAdmin) {
+  let esUsuario = 0;
   const solicitudXmlHttp = new XMLHttpRequest();
   solicitudXmlHttp.open(
     'POST',
@@ -16,13 +17,15 @@ function iniciarSesion(credenciales) {
   solicitudXmlHttp.onreadystatechange = function () {
     if (solicitudXmlHttp.readyState === 4) {
       console.log(solicitudXmlHttp.status);
-      esAdministrador = solicitudXmlHttp.responseText;
-      if (esAdministrador == true) {
-        alert('Ingresando...');
-        window.location.replace('vistaClientes.php');
-      } else {
+      esUsuario = solicitudXmlHttp.responseText;
+      console.log(esUsuario);
+      if (esAdmin == true) {
+        iniciarAdmin();
+      } else if (esUsuario == true) {
         console.log("no es admin.");
-        document.getElementsByClassName("Contraseña")[1].innerHTML = "Credenciales incorrectas"
+        iniciarUsuario();
+      } else {
+        document.getElementsByClassName("Contraseña")[1].innerHTML = "Credenciales incorrectas";
       }
     };
   }

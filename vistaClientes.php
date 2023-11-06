@@ -10,9 +10,12 @@
       <div onclick="actualizarVista('clientes')" class="pestañaBarraNavegadora">
         Clientes
       </div>
-      <div onclick="actualizarVista('usuarios')" class="pestañaBarraNavegadora">
-        Empleados
-      </div>
+      <?php
+        $json = json_encode($_REQUEST);
+        $autoridad = json_decode($json);
+        $esAdmin = $autoridad->request;
+        echo $esAdmin;
+      ?>
       <div class="pestañaBarraNavegadora">
         3
       </div>
