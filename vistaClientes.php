@@ -20,7 +20,7 @@
       echo $esAdmin;
       ?>
       <div class="pestañaBarraNavegadora">
-        Ordenar
+        --------
       </div>
       <div class="pestañaBarraNavegadora">
         <input type="text" id="busqueda" placeholder="buscar">

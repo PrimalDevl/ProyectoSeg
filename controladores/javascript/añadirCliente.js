@@ -32,9 +32,9 @@ function añadirCliente() {
     <form class="" action="controladores/php/añadirItem.php" method="post">
       <input type="text" name="cedula" placeholder="Cédula Cliente">
       <input type="text" name="nombre" placeholder="tipo_de_seguro">
-      <input type="text" name="apellido" placeholder="Cantidad Asegurada">
-      <input type="text" name="direccion" placeholder="fecha_comienzo">
-      <input type="text" name="direccion" placeholder="fecha_vencimiento">
+      <input type="number" name="apellido" placeholder="Cantidad Asegurada">
+      <input type="text" name="direccion" placeholder="fecha_comienzo yyyy-mm-dd">
+      <input type="text" name="direccion" placeholder="fecha_vencimiento yyyy-mm-dd">
       <input type="text" name="categoria" value="${categoria}" style="display:none"> <br>
       <button type="submit">Confirmar</button>
     </form>
