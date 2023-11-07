@@ -28,6 +28,7 @@ if ($resultado) {
       'nombre' => $cliente['nombre'],
       'apellido' => $cliente['apellido'],
       'direccion' => $cliente['direccion'],
+      'contrasena' => $cliente['contrasena'],
     );
   }
   if ($categoria == "seguros") {
@@ -37,7 +38,7 @@ if ($resultado) {
       'direccion' => $cliente['fecha_comienzo'],
       'email' => $cliente['fecha_vencimiento'],
       'nombre' => $cliente['tipo_de_seguro'],
-      'ci_cliente '=> $cliente['ci_cliente'],
+      'ci_cliente'=> $cliente['ci_cliente'],
     );
   }
   echo json_encode($datosCliente);

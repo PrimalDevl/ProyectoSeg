@@ -1,17 +1,25 @@
 <?php
 require_once '../../baseDeDatos/conexion.php';
-
 $categoria = $_REQUEST['categoria'];
-$declaracion = $conexion->prepare("INSERT INTO {$categoria} (cedula, nombre) VALUES (?, ?)");
+if ($categoria == "seguros") {
 
-$cedula = $_POST['cedula'];
-$nombre = $_POST['nombre'];
-$declaracion->bind_param("ss", $cedula, $nombre);
+} else {
+  $cedula = $_POST['cedula'];
+  $nombre = $_POST['nombre'];
+  $apellido = $_POST['apellido'];
+  $direccion = $_POST['direccion'];
+if ($categoria == "clientes") {
+  $email = $_POST['email'];
+  $declaracion = $conexion->prepare("INSERT INTO {$categoria} (cedula, nombre, apellido, direccion, email) VALUES (?, ?, ?, ?, ?)");
+  $declaracion->bind_param("sssss", $cedula, $nombre, $apellido, $direccion, $email);
+} else {
+  $declaracion = $conexion->prepare("INSERT INTO {$categoria} (cedula, nombre, apellido, direccion) VALUES (?, ?, ?, ?)");
+  $declaracion->bind_param("ssss", $cedula, $nombre, $apellido, $direccion);
+}
+
 $declaracion->execute();
 
-echo "
-<script type='text/javascript'>
-  window.location = '../../vistaClientes.php';
-  </script>";
+}
+  echo "<a href=\"javascript:history.go(-1)\">VOLVER</a>";
   exit();
 ?>

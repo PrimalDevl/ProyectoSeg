@@ -14,20 +14,47 @@
     let codigoHTML = '';
 
       let seleccion = JSON.parse(respuesta);
+      if (memoriaCategoria == "clientes") {
         codigoHTML = `
-        <h1 class="seleccion" id="${seleccion[0].cedula}">${seleccion[0].nombre}</h1>
+        <h1 class="seleccion" id="${seleccion[0].cedula}">Nombre: ${seleccion[0].nombre}</h1>
         <br>
-        <h2>${seleccion[0].cedula}</h2>
+        <h2>Cedula: ${seleccion[0].cedula}</h2>
         <br>
-        <p>${seleccion[0].apellido}</p>
+        <p>Apellido: ${seleccion[0].apellido}</p>
         <br>
-        <p>${seleccion[0].direccion}</p>
+        <p>Direccion: ${seleccion[0].direccion}</p>
         <br>
-        <p>${seleccion[0].email}</p>
-        <br>
-        <p>${seleccion[0].ci_cliente}</p>
+        <p>Email: ${seleccion[0].email}</p>
         `;
-
+      }
+      if (memoriaCategoria == "usuarios") {
+        codigoHTML = `
+        <h1 class="seleccion" id="${seleccion[0].cedula}">Nombre: ${seleccion[0].nombre}</h1>
+        <br>
+        <h2>Cedula: ${seleccion[0].cedula}</h2>
+        <br>
+        <p>Apellido: ${seleccion[0].apellido}</p>
+        <br>
+        <p>Direccion: ${seleccion[0].direccion}</p>
+        <br>
+        <p>Contraseña: ${seleccion[0].contrasena}</p>
+        `;
+      }
+      if (memoriaCategoria == "seguros") {
+        codigoHTML = `
+        <h1 class="seleccion" id="${seleccion[0].cedula}">Tipo de Seguro: ${seleccion[0].nombre}</h1>
+        <br>
+        <h2>Núm. Póliza: ${seleccion[0].cedula}</h2>
+        <br>
+        <p>Cantidad Asegurada: $${seleccion[0].apellido} UYU</p>
+        <br>
+        <p>Fecha de Comienzo: ${seleccion[0].direccion}</p>
+        <br>
+        <p>Fecha de Vencimiento: ${seleccion[0].email}</p>
+        <br>
+        <p>Cédula del cliente Asgurado: ${seleccion[0].ci_cliente}</p>
+        `;
+      }
     vistaDetallada.innerHTML = codigoHTML;
   }
 }
