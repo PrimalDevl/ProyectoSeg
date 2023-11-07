@@ -8,10 +8,17 @@ $resultado = mysqli_query($conexion, $consulta);
 $datosJson = array();
 		if($resultado) {
 			while($fila = mysqli_fetch_assoc($resultado)) {
-				$datosJson[] = array(
-        'cedula' => $fila['cedula'],
-				'nombre' => $fila['nombre'],
-				);
+				if ($categoria == "seguros") {
+					$datosJson[] = array(
+						'cedula' => $fila['num_poliza'],
+						'nombre' => $fila['tipo_de_seguro'],
+					);
+				} else {
+					$datosJson[] = array(
+						'cedula' => $fila['cedula'],
+						'nombre' => $fila['nombre'],
+					);
+				}
 		}
   if ($datosJson == null) {
     echo 'No se encontraron registros en la base de datos.';

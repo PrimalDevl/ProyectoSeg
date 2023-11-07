@@ -1,10 +1,11 @@
 function añadirCliente() {
-  formularioAñadirRegistro = document.getElementById('vistaDetallada');
+  let formularioAñadirRegistro = document.getElementById('vistaDetallada');
+  let categoria = document.getElementById("memoriaCategoria").innerHTML;
   codigoHTML = `
   <form class="" action="controladores/php/añadirItem.php" method="post">
-    <input type="text" name="cedula" placeholder="Cédula del Cliente">
-    <input type="text" name="nombre" placeholder="Nombre del Cliente">
-    <input type="text" name="categoria" placeholder="clientes || usuarios">
+    <input type="text" name="cedula" placeholder="Cédula">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="text" name="categoria" value="${categoria}" style="display:none"> <br>
     <button type="submit">Confirmar</button>
   </form>
   `;

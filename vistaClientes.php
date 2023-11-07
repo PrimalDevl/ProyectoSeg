@@ -10,17 +10,17 @@
       <div onclick="actualizarVista('clientes')" class="pestañaBarraNavegadora">
         Clientes
       </div>
+      <div onclick="actualizarVista('seguros')"  class="pestañaBarraNavegadora">
+        Seguros
+      </div>
       <?php
-        $json = json_encode($_REQUEST);
-        $autoridad = json_decode($json);
-        $esAdmin = $autoridad->request;
-        echo $esAdmin;
+      $json = json_encode($_REQUEST);
+      $autoridad = json_decode($json);
+      $esAdmin = $autoridad->request;
+      echo $esAdmin;
       ?>
       <div class="pestañaBarraNavegadora">
-        3
-      </div>
-      <div class="pestañaBarraNavegadora">
-        4
+        Vista
       </div>
       <div class="pestañaBarraNavegadora">
         <input type="text" id="busqueda" placeholder="buscar">
@@ -29,6 +29,7 @@
           <option value="nombre">Nombre</option>
           <option value="apellido">Apellido</option>
           <option value="email">Email</option>
+          <option value="tipo_de_seguro">Tipo de Seguro</option>
         </select>
         <button onclick="buscarRegistros()" type="button" name="Buscar"> Buscar </button>
       </div>
@@ -44,7 +45,7 @@
         <button onclick='añadirCliente()'>Añadir</button>
         <button onclick='mostrarModificar()'>Modificar</button>
         <button onclick="eliminarItem()">Eliminar</button>
-        <button onclick="actualizarVista()">Actualizar</button>
+        <button onclick="refrescarVista()">Actualizar</button>
       </div>
     </div>
 

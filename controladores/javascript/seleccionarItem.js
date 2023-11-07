@@ -16,10 +16,16 @@
       let seleccion = JSON.parse(respuesta);
         codigoHTML = `
         <h1 class="seleccion" id="${seleccion[0].cedula}">${seleccion[0].nombre}</h1>
-        <hr>
+        <br>
         <h2>${seleccion[0].cedula}</h2>
-        <hr>
-        <p>${seleccion[0].comentario}</p>
+        <br>
+        <p>${seleccion[0].apellido}</p>
+        <br>
+        <p>${seleccion[0].direccion}</p>
+        <br>
+        <p>${seleccion[0].email}</p>
+        <br>
+        <p>${seleccion[0].ci_cliente}</p>
         `;
 
     vistaDetallada.innerHTML = codigoHTML;

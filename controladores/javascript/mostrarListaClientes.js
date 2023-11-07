@@ -3,7 +3,6 @@ function actualizarVista(categoria) {
   let mostradorClientes = document.getElementById("datosCliente");
   let memoriaCategoria = document.getElementById("memoriaCategoria");
   memoriaCategoria.innerHTML = `${categoria}`
-  console.log(memoriaCategoria);
     solicitudXmlHttp.open(
       'GET',
       `controladores/php/traerListaClientes.php?categoria=${categoria}`
