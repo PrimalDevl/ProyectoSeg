@@ -13,16 +13,21 @@ function esAdmin(credenciales, usuario) {
     "Content-Type",
     "application/x-www-form-urlencoded"
   );
-  solicitud = `cedula=${usuario}`
+  solicitud = credenciales;
   solicitudXmlHttp.send(solicitud);
   solicitudXmlHttp.onreadystatechange = function () {
     if (solicitudXmlHttp.readyState === 4) {
       let datosUsuario = solicitudXmlHttp.responseText;
-      let usuario = JSON.parse(datosUsuario);
-      console.log(usuario[0]);
-      let esAdmin = usuario[0].esAdmin;
-      iniciarSesion(credenciales, esAdmin);
+      if (datosUsuario != "") {
+        console.log(datosUsuario);
+        let usuario = JSON.parse(datosUsuario);
+        console.log(usuario[0]);
+        let esAdmin = usuario[0].esAdmin;
+        iniciarSesion(credenciales, esAdmin);
+      } else {
+        let cedulaAlerta = document.getElementsByClassName('Cedula') [1];
+        cedulaAlerta.innerText = "Usuario o contraseña incorrectos";
+      }
     };
   }
 }
-  // let mensaje = `cedula=<div onclick="actualizarVista('usuarios')" class="pestañaBarraNavegadora">Empleados</div>`;

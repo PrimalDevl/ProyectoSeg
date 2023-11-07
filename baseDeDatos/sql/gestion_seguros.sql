@@ -7,8 +7,6 @@ CREATE TABLE clientes (
 	apellido VARCHAR(255),
 	direccion VARCHAR(255),
 	email VARCHAR(255),
-	recibo_de_cuenta TEXT(2047),
-	telefono INT(9),
 	PRIMARY KEY (cedula)
 );
 CREATE TABLE usuarios (
@@ -16,21 +14,32 @@ CREATE TABLE usuarios (
 	nombre VARCHAR(255),
 	apellido VARCHAR(255),
 	direccion VARCHAR(255),
-	telefono TEXT(9),
+	contrasena VARCHAR(255) NOT NULL,
 	esAdmin BOOLEAN,
 	PRIMARY KEY (cedula)
 );
 CREATE TABLE seguros (
-	num_poliza INT(9),
-	ci_cliente INT(8),
-	rutEmpresa INT(12),
+	fecha_comienzo DATE,
+	fecha_vencimiento DATE,
 	tipo_de_seguro VARCHAR(255),
 	cantidad_asegurada INT(10),
-	fecha_comienzo DATE(),
-	fecha_vencimiento DATE(),
-	FOREIGN KEY (ci_cliente) REFERENCES cliente(cedula),
+	num_poliza INT(9) AUTO_INCREMENT,
+	ci_cliente INT(8),
+	FOREIGN KEY (ci_cliente) REFERENCES clientes(cedula),
 	PRIMARY KEY (num_poliza, ci_cliente)
-)
+);
+CREATE TABLE telefono_cliente (
+	cedula INT(10),
+	telefono INT(9),
+	PRIMARY KEY (cedula, telefono),
+	FOREIGN KEY (cedula) REFERENCES clientes(cedula)
+);
+CREATE TABLE telefono_usuario (
+	cedula INT(10),
+	telefono INT(9),
+	PRIMARY KEY (cedula, telefono),
+	FOREIGN KEY (cedula) REFERENCES usuarios(cedula)
+);
 CREATE TABLE bajas_logicas (
 	identificador INT(8) AUTO_INCREMENT,
 	datos TEXT(2047),

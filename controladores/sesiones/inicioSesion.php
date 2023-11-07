@@ -1,9 +1,14 @@
 <?php
-$cedula = $_POST['cedula'];
-$contrasena = $_POST['contrasena'];
-if ($cedula == 55554216  && $contrasena == "HolaMUND0!") {
+// Invocado por inicioSesion.js
+require_once '../../baseDeDatos/conexion.php';
+$cedula = $_REQUEST['cedula'];
+$contrasena = $_REQUEST['contrasena'];
+$resultado = $conexion->query("SELECT contrasena FROM usuarios WHERE cedula = {$cedula};");
+
+
+if ($contrasena == $resultado) {
   echo true;
-} else if ($cedula == 55554215  && $contrasena == "HolaMUND0!") {
-  echo true;
+} else {
+  echo false;
 }
 ?>

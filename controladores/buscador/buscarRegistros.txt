@@ -1,0 +1,7 @@
+HTML -> javascript > PHP > javascript > HTML
+
+marco de ingreso HTML
+extraccion de datos y envio a PHP
+Consulta SQL por PHP
+Procesamiento de Datos por javascript
+Mostrar datos en HTML

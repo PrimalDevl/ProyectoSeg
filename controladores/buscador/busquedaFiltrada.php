@@ -1,8 +1,10 @@
 <?php
 require_once '../../baseDeDatos/conexion.php';
 
+$filtro = $_REQUEST['filtro'];
+$busqueda = $_REQUEST['busqueda'];
 $categoria = $_REQUEST['categoria'];
-$consulta = "SELECT * FROM {$categoria}";
+$consulta = "SELECT * FROM {$categoria} WHERE {$filtro} = '{$busqueda}' ";
 $resultado = mysqli_query($conexion, $consulta);
 
 $datosJson = array();

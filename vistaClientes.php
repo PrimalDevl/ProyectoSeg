@@ -23,7 +23,14 @@
         4
       </div>
       <div class="pestañaBarraNavegadora">
-        5
+        <input type="text" id="busqueda" placeholder="buscar">
+        <select id="filtro">
+          <option value="cedula">Cedula</option>
+          <option value="nombre">Nombre</option>
+          <option value="apellido">Apellido</option>
+          <option value="email">Email</option>
+        </select>
+        <button onclick="buscarRegistros()" type="button" name="Buscar"> Buscar </button>
       </div>
     </div>
 
@@ -64,7 +71,7 @@
         </dialog>
       </div>
 
-    <div id="memoriaCategoria">clientes</div>
+    <div id="memoriaCategoria" style="display:none">clientes</div>
 
     <script type="text/javascript" src="controladores/javascript/mostrarListaClientes.js"></script>
     <script type="text/javascript" src="controladores/javascript/seleccionarItem.js"></script>
@@ -73,4 +80,5 @@
     <script type="text/javascript" src="controladores/javascript/modificarCliente.js"></script>
     <script type="text/javascript" src="controladores/javascript/barraHerramientas.js"></script>
     <script type="text/javascript" src="controladores/javascript/actualizar.js"></script>
+    <script type="text/javascript" src="controladores/buscador/busqueda.js"></script>
 </html>

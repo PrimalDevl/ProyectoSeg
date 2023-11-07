@@ -1,3 +1,4 @@
+// Invocado por esAdmin.js
 function iniciarSesion(credenciales, esAdmin) {
   let esUsuario = 0;
   const solicitudXmlHttp = new XMLHttpRequest();
@@ -21,11 +22,9 @@ function iniciarSesion(credenciales, esAdmin) {
       console.log(esUsuario);
       if (esAdmin == true) {
         iniciarAdmin();
-      } else if (esUsuario == true) {
+      } else {
         console.log("no es admin.");
         iniciarUsuario();
-      } else {
-        document.getElementsByClassName("Contraseña")[1].innerHTML = "Credenciales incorrectas";
       }
     };
   }

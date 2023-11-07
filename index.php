@@ -10,9 +10,9 @@
   <div id="monitorDeEstado"></div>
   <div class="Tabla">
     <img src="vista/graficos/perfilUsuario.png" class="Logo" alt="gráfico de perfil">
-      <input required id="cedula" type="text" class="Cedula" name="cedula" placeholder="Ingrese su cedula sin guión" value="55554216"></input>
+      <input required id="cedula" type="text" class="Cedula" name="cedula" placeholder="Ingrese su cedula sin guión"></input>
       <p style="display:block;" class="Cedula"></p>
-      <input required id="contrasena" type="text" minlength="8" class="Contraseña" name="contrasena" placeholder="Ingrese su contraseña" value="HolaMUND0!"></input>
+      <input required id="contrasena" type="text" minlength="8" class="Contraseña" name="contrasena" placeholder="Ingrese su contraseña"></input>
       <p style="display:block;" class="Contraseña"></p>
       <button class="Ingresar" onclick="validarCampos()" name="submit" value="ingresar">Ingresar</button>
   </div>
